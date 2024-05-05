@@ -13,10 +13,10 @@ export default function Page() {
   })
 
   return <>
-	  <main className="flex justify-center items-center">
+	  <div className="flex h-full justify-center items-center">
 		<button className="px-4 py-2 border-black dark:border-white border-4 hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black transition-colors text-2xl rounded-xl" onClick={async () => {
 			complete(await navigator.clipboard.readText());
 		}}>{error ? <span className="text-red-500">{error.message}</span> : isLoading ? loader() : completion === "" ? "Solve" : <>{(JSON.parse(completion) as string[]).map((x, i) => <span key={i} className="font-bold">{x}</span>)}</>}</button>
-	  </main>
+	  </div>
   </>
 }
