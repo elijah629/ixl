@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "IXL AI",
 };
 
-const bookmarklet = `const n=Array.from(document.querySelector(".ixl-practice-crate").children[1].children).map(n=>n.innerText);n[0]+="\n";n[n.length-1]=n[n.length-1].split("\n").map((n,e)=>String.fromCharCode(97 + e)+") "+n).join("\n");await navigator.clipboard.writeText(n.join("\n"));`;
+const bookmarklet = `const n=Array.from(document.querySelector(".ixl-practice-crate").children[1].children).map(n=>n.innerText);n[0]+="\n",n[n.length-1]=n[n.length-1].split("\n").map((n,e)=>"abcdefghijklmnopqrstuvwxyz"[e]+") "+n).join("\n"),await navigator.clipboard.writeText(n.join("\n"))`
 
 export default function RootLayout({
   children,
