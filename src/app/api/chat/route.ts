@@ -22,7 +22,7 @@ a) first person
 
 export async function POST(req: Request) {
   const { prompt }: { prompt: string } = await req.json();
-  const model = groq("llama3-70b-8192");
+  const model = groq("lama-3.1-405b-reasoning");
   const result = await generateText({
     model,
     temperature: 0.4,
